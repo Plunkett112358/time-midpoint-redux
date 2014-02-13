@@ -164,29 +164,30 @@ function get_midpoint(){
   };
 };
 
-function appendInput(){
-  var div_clone = $('.location-div').last().clone()
-  $('.add-friend').remove();
-  var last_div = $('.location-div').last()
-  div_clone.insertAfter(last_div);
-  var last_input = $('.location').last();
-  addAutocomplete(last_input);
-  last_input.val('');
-  setSelect();
-  clickFavorite();
 
-  $('.add-friend').click(function(){
-    appendInput();
-  })
+function appendInput(){
+    var div_clone = $('.location-div').last().clone()
+    $('.add-friend').remove();
+    var last_div = $('.location-div').last()
+    div_clone.insertAfter(last_div);
+    var last_input = $('.location').last();
+    addAutocomplete(last_input);
+    last_input.val('');
+    clickFavorite();
+
+    $('.add-friend').click(function(){
+        appendInput();
+    })
 }
+
 
 function My_Location(latitude, longitude){
     this.latitude = latitude;
     this.longitude = longitude;
   }
 
-    
-    
+
+
 function addAutocomplete(location){
   $(location).geocomplete().bind("geocode:result", function(event, result){
     var latitude = result.geometry.location.d;
@@ -201,10 +202,10 @@ function addAutocomplete(location){
     // fades out slowly
 
       inputDiv.slideUp()
-      
+
 
       //We need to see how to show it without lagging
-      
+
     })
     console.log(coordinates_array);
   });
@@ -244,7 +245,7 @@ function callback(response, status){
     var parsed_distance = distance.match(/\d*[.]\d*/g)
     if (parsed_distance === null) {
       parsed_distance = distance.match(/\d+/g);
-    } 
+    }
   }
   var distance_float = parseFloat(parsed_distance[0])
   distances_array.push(distance_float);
