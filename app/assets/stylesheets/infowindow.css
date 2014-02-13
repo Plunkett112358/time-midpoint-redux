@@ -1,0 +1,18 @@
+.infowindow {
+    padding: 5px;
+}
+
+.infowindow h4 {
+    text-align: center;
+    color: #c0392b;
+    margin-bottom: 5px;
+}
+
+.rating-pic {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.yelp-pic {
+    margin: 0 auto;
+}
